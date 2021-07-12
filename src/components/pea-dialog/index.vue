@@ -80,8 +80,6 @@ export default {
         closeBtnText.includes(this.cancelButtonText) &&
         !this.beforeClose
       ) {
-        console.log("jiji");
-
         this.$refs.peaDialog.$emit("update:visible", false);
       }
     },
