@@ -1,6 +1,4 @@
 import Vue from "vue";
-//import PeaUI from "./addons/register";
-
 console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 
 const isDev = process.env.NODE_ENV === "development";
@@ -12,8 +10,12 @@ export default async ({ isServer }) => {
   if (!isServer) {
     const elementUI = await import("element-ui");
     Vue.use(elementUI);
-    const peaUI = await import("@jackluson/ui");
-    console.log("peaUI", peaUI);
-    Vue.use(peaUI);
+    let peaUI;
+    if (isDev) {
+      peaUI = await import("./addons/register");
+    } else {
+      peaUI = await import("pea-ui");
+    }
+    peaUI && Vue.use(peaUI.default);
   }
 };
