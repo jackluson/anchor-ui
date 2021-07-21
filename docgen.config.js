@@ -10,12 +10,7 @@ module.exports = {
       path.dirname(componentPath.replace("src", "examples")), // “\”mac 与window 是不一样的
       "Readme.md"
     );
-    console.log(readMePath);
     const isExistReadMeFile = fs.existsSync(readMePath);
-    console.log(
-      "🚀 ~ file: docgen.config.js ~ line 16 ~ isExistReadMeFile",
-      isExistReadMeFile
-    );
     return isExistReadMeFile ? readMePath : undefined;
   }, // specify the name of the input md file
   getDestFile: (file, config) => {

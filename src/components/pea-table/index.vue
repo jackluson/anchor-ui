@@ -50,7 +50,7 @@
               @slot 提供给列表头部，列配置的插槽
               @binding {string} name 指定插槽名字（没指定的话，默认default）
               @binding {number} $index 第几列
-              @binding {object} row 列配置数据
+              @binding {object} row     列配置数据
            -->
           <slot :name="'default'" :row="scope.row" :$index="scope.$index" />
         </template>

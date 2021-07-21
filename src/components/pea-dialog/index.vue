@@ -18,9 +18,14 @@
     v-on="$listeners"
   >
     <div>
+      <!-- @slot 内容区域 -->
       <slot></slot>
     </div>
     <div slot="footer">
+      <!--
+        @slot dialog footer 区域，默认有取消，确认按钮
+
+      -->
       <slot name="footer">
         <el-button @click="handleClose">{{ cancelButtonText }}</el-button>
         <el-button type="primary" @click="handleConfirm">{{
@@ -34,7 +39,7 @@
 <script>
 const closeBtnText = ["取消", "关闭"];
 /**
- * 基于el-dialog二次封装对话框，内置一些通用配置
+ * 基于el-dialog二次封装对话框，内置一些通用配置，比如footer，close事件的处理
  * @displayName pea-dialog
  */
 export default {
@@ -83,8 +88,12 @@ export default {
         this.$refs.peaDialog.$emit("update:visible", false);
       }
     },
-    handleConfirm(...arg) {
-      this.$emit("confirm", ...arg);
+    handleConfirm(e) {
+      /**
+       * 弹窗确认事件
+       * @arg {e}  MouseEvent 点击事件对象
+       */
+      this.$emit("confirm", e);
     },
   },
 };
