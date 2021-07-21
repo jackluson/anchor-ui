@@ -7,13 +7,18 @@
 
 <template>
   <div class="pea-layout">
-    <header>
+    <header v-if="this.$scopedSlots.header">
+      <!--
+        @slot header 头部插槽内容
+       -->
       <slot name="header"></slot>
     </header>
-    <main class="pea-layout-main">
+    <main class="pea-layout-main" :style="`align-items: ${this.alignItems}`">
+      <!-- @slot 默认插槽内容，中心main区域 -->
       <slot></slot>
     </main>
-    <footer>
+    <footer v-if="this.$scopedSlots.footer">
+      <!-- @slot footer 脚部插槽内容 -->
       <slot name="footer"></slot>
     </footer>
   </div>
@@ -21,11 +26,23 @@
 
 <script>
 /**
- * 利用flex 自适应，撑起main高度
+ * 利用flex 自适应，main 插槽撑起剩余高度
  * @displayName pea-layout
  */
 export default {
   name: "PeaLayout",
+  props: {
+    /**
+     * 中心main 区域的align-items属性配置
+     */
+    alignItems: {
+      type: String,
+      default: "self-start",
+    },
+  },
+  mounted() {
+    console.log("this", this);
+  },
 };
 </script>
 
@@ -38,7 +55,8 @@ export default {
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: self-start; // TODO: 后来设置prop 控制
+    // align-items: self-start; // TODO: 后来设置prop 控制
+    align-items: center;
   }
 }
 </style>

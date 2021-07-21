@@ -23,7 +23,7 @@
     </div>
     <div slot="footer">
       <!--
-        @slot dialog footer 区域，默认有取消，确认按钮
+        @slot dialog footer  区域，默认有取消，确认按钮
 
       -->
       <slot name="footer">
