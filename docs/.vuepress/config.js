@@ -3,7 +3,8 @@ const glob = require("globby");
 const cwd = path.join(__dirname, "..");
 
 const genComponentSidebar = (dir) => {
-  const reg = new RegExp(`^${dir}\/(\\S+\/)index.md$`, "g");
+  const reg = new RegExp(`^${dir}\\/(\\S+\\/)index.md$`, "g");
+
   return glob.sync(`${dir}/**/index.md`, { cwd }).map((f) =>
     f.replace(reg, (ms, $1) => {
       return $1;
@@ -41,7 +42,11 @@ module.exports = async () => {
     ],
     dest: path.join(__dirname, "../../dist"),
     title: "Pea UI Toolkit",
-
+    locales: {
+      '/': {
+        lang: 'zh-CN',
+      },
+    },
     themeConfig: {
       nav: [
         { text: "首页", link: "/" },
@@ -98,7 +103,6 @@ module.exports = async () => {
     ],
 
     chainWebpack: (config, isServer) => {
-      console.log("isServer", isServer);
       //config.resolve.alias.set("core-js/library/fn", "core-js/features");
       // config 是 ChainableConfig 的一个实例
       config.externals({
