@@ -2,25 +2,49 @@
 
 ### 基本使用
 
-::: demo `ElementUI` pea-separater 组件示例
+::: demo
 
 ```html
 <template>
   <div>
-    <p>分隔符|</p>
+    <p>垂直分隔线 |</p>
     <ClientOnly>
-      <pea-separater width="2"></pea-separater>
+      <pea-separater width="2" ></pea-separater>
+      <br>
+      <pea-separater width="2" color="green" ></pea-separater>
     </ClientOnly>
   </div>
 </template>
 
-<script>
-  export default {
-    mounted() {
-      console.log("mounted");
-    },
-  };
-</script>
+```
+
+:::
+
+### 水平分割
+
+::: demo 水平分割线
+
+```html
+<template>
+  <div>
+    <p class="separater-wrapper"> 水平分割线 ——————</p>
+    <ClientOnly>
+      <div class="separater-wrapper">
+      <pea-separater width="200" height="1" /> &nbsp; 你好 &nbsp; <pea-separater width="200" height="1" />
+      </div>
+      <br>
+      <pea-separater width="200" height="1" color="#9400ff"></pea-separater>
+    </ClientOnly>
+  </div>
+</template>
+
+<style>
+.separater-wrapper {
+  display: flex;
+  align-items: center
+}
+</style>
+
 ```
 
 :::

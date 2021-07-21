@@ -40,9 +40,6 @@ export default {
       default: "self-start",
     },
   },
-  mounted() {
-    console.log("this", this);
-  },
 };
 </script>
 
