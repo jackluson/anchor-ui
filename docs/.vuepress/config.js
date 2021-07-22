@@ -3,13 +3,16 @@ const glob = require("globby");
 const cwd = path.join(__dirname, "..");
 
 const genComponentSidebar = (dir) => {
-  const reg = new RegExp(`^${dir}\\/(\\S+\\/)index.md$`, "g");
+  const reg = new RegExp(`^${dir}\\/(\\S+)\\/index.md$`, "g");
 
-  return glob.sync(`${dir}/**/index.md`, { cwd }).map((f) =>
-    f.replace(reg, (ms, $1) => {
-      return $1;
-    })
+  const componentList = glob.sync(`${dir}/**/index.md`, { cwd }).map((f) => f.replace(reg, (ms, $1) => {
+    return $1;
+  })
   );
+  return componentList.map((componentName) => ({
+    title: componentName,
+    path: `${componentName}/`
+  }))
 };
 
 module.exports = async () => {
@@ -48,6 +51,7 @@ module.exports = async () => {
       },
     },
     themeConfig: {
+      displayAllHeaders: true,
       nav: [
         { text: "首页", link: "/" },
         { text: "基础公共组件", link: "/components/" },
@@ -66,6 +70,8 @@ module.exports = async () => {
       // sidebar
     },
     plugins: [
+      '@vuepress/back-to-top',
+      '@vuepress/nprogress',
       //[
       //  "typescript",
       //  {
@@ -99,22 +105,17 @@ module.exports = async () => {
             },
           ],
         },
-      ],
+      ]
     ],
 
     chainWebpack: (config, isServer) => {
+      console.log(`🚀 ~ file: config.js ~ line 109 ~ module.exports= ~ isServer`, isServer);
       //config.resolve.alias.set("core-js/library/fn", "core-js/features");
       // config 是 ChainableConfig 的一个实例
       config.externals({
         vue: "Vue",
-        //"vue-router": "VueRouter",
-        //vuex: "Vuex",
-        //axios: "axios",
         "element-ui": "ELEMENT",
         "pea-ui": "PeaUI",
-        //"ali-oss": "OSS",
-        //app: "app",
-        //"crm-personnel-material": "CrmPersonnelMaterial",
       });
     },
   };

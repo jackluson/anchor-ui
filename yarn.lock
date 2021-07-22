@@ -1579,6 +1579,13 @@
   dependencies:
     lodash.debounce "^4.0.8"
 
+"@vuepress/plugin-back-to-top@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.nlark.com/@vuepress/plugin-back-to-top/download/@vuepress/plugin-back-to-top-1.8.2.tgz#e9794409d1d589e4952b0700291270d2696e6d01"
+  integrity sha1-6XlECdHVieSVKwcAKRJw0mlubQE=
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 "@vuepress/plugin-last-updated@1.8.2":
   version "1.8.2"
   resolved "https://registry.npm.taobao.org/@vuepress/plugin-last-updated/download/@vuepress/plugin-last-updated-1.8.2.tgz#7ce689f8d5050cf0213949bc2e5aa879c09ff4b1"
@@ -1586,7 +1593,7 @@
   dependencies:
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-nprogress@1.8.2":
+"@vuepress/plugin-nprogress@1.8.2", "@vuepress/plugin-nprogress@^1.8.2":
   version "1.8.2"
   resolved "https://registry.nlark.com/@vuepress/plugin-nprogress/download/@vuepress/plugin-nprogress-1.8.2.tgz#dc6c082925420c8c59ecb7fc2d4a9401f6d4664a"
   integrity sha1-3GwIKSVCDIxZ7Lf8LUqUAfbUZko=
