@@ -8,28 +8,7 @@
     :align="column.align || align || 'left'"
     :header-align="headerAlign || column.align || align || 'left'"
   >
-    <!-- 绑定el-table的slot：header -->
-    <template
-      v-if="column.slotHeaderName || column.renderHeader"
-      v-slot:header="scope"
-    >
-      <span v-if="column.slotHeaderName">
-        <!-- 提供插槽name给pea-table -->
-        <slot
-          :name="column.slotHeaderName"
-          :column="scope.column"
-          :$index="scope.$index"
-        />
-      </span>
-      <pea-render
-        v-else-if="column.renderHeader"
-        :scope="scope"
-        :render="column.renderHeader"
-      ></pea-render>
-      <span v-else>{{ column.label }}</span>
-    </template>
-
-    <template v-slot="scope">
+    <template v-if="!isTypeColumn" v-slot="scope">
       <div v-if="column.slot || column.slotName">
         <slot
           :row="scope.row"
@@ -52,6 +31,26 @@
       </div>
     </template>
 
+    <!-- 绑定el-table的slot：header -->
+    <template
+      v-if="!isTypeColumn && (column.slotHeaderName || column.renderHeader)"
+      v-slot:header="scope"
+    >
+      <span v-if="column.slotHeaderName">
+        <!-- 提供插槽name给pea-table -->
+        <slot
+          :name="column.slotHeaderName"
+          :column="scope.column"
+          :$index="scope.$index"
+        />
+      </span>
+      <pea-render
+        v-else-if="column.renderHeader"
+        :scope="scope"
+        :render="column.renderHeader"
+      ></pea-render>
+      <span v-else>{{ column.label }}</span>
+    </template>
     <template v-if="column.children">
       <pea-column
         v-for="(col, index) in column.children"
@@ -77,6 +76,16 @@ export default {
   },
   components: {
     PeaRender,
+  },
+
+  computed: {
+    isTypeColumn() {
+      return this.column.type && !this.column.label;
+    },
+  },
+
+  created() {
+    console.log("column", this.column);
   },
 };
 </script>

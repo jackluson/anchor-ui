@@ -6,6 +6,8 @@
       :class="{ 'pea-table-no-overflow-y': !!maxHeight }"
       v-bind="$attrs"
       v-on="$listeners"
+      :stripe="stripe"
+      :border="border"
       :data="pagination && data.length > pageSize ? tableData : data"
       :span-method="this.merge ? this.mergeMethod : this.spanMethod"
       :max-height="maxHeight"
@@ -112,6 +114,22 @@ export default {
     pagination: {
       type: Boolean,
       default: false,
+    },
+
+    /**
+     * 是否带有纵向边框
+     */
+    border: {
+      type: Boolean,
+      default: true,
+    },
+
+    /**
+     * 是否为斑马纹 table
+     */
+    stripe: {
+      type: Boolean,
+      default: true,
     },
 
     /**
