@@ -72,6 +72,7 @@ export default {
       }
     },
     handleSelectionChange(val) {
+      console.log(`🚀 ~ file: multiple-table.vue ~ line 75 ~ handleSelectionChange ~ val`, val);
       this.multipleSelection = val;
     },
   },

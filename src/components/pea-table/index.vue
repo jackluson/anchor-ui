@@ -16,7 +16,12 @@
         v-bind="$attrs"
         v-for="(item, index) in column"
         :key="index"
-        :column="item"
+        :column="{
+          splitSymbol: splitSymbol,
+          openDefaultFormatter: openDefaultFormatter,
+          ...item
+        }"
+
       >
         <!-- template 填充pea-column 的插槽 -->
         <template
@@ -101,7 +106,21 @@ export default {
         return [];
       },
     },
-    spanMethod: Function,
+    /**
+     *  是否开始空值是否默认值，空值包括`null`, 空字符串, `undefined`, 
+     */
+    openDefaultFormatter: {
+      type: Boolean,
+      default: false
+    },
+
+    /**
+     *  默认格式化字符
+     */
+    splitSymbol: {
+      type: String,
+      default: "-"
+    },
     /**
      * Table 的最大高度。合法的值为数字或者单位为 px 的高度, 参照el-table
      */
@@ -163,9 +182,14 @@ export default {
       default: 1,
     },
     /**
-     * 合并数组
+     * 合并行或列的计算方法， 同`el-table`
+     */
+    spanMethod: Function,
+    /**
+     * 需要合并prop数组,如果配置了此值，默认计算`spanMethod`方法
      */
     merge: Array,
+
   },
   components: {
     PeaColumn,
