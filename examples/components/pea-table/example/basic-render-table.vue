@@ -2,16 +2,16 @@
   <pea-table align="center" :column="column" :data="tableData"> </pea-table>
 </template>
 <script>
-const Vue = require("vue");
-Vue.component("button-counter", {
-  data: function () {
-    return {
-      count: 0,
-    };
-  },
-  template:
-    '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
-});
+// const Vue = require("vue");
+// Vue.component("button-counter", {
+//   data: function () {
+//     return {
+//       count: 0,
+//     };
+//   },
+//   template:
+//     '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
+// });
 export default {
   data() {
     return {
@@ -29,8 +29,7 @@ export default {
             const propKey = column.property;
             return (
               <div>
-                {" "}
-                <button-counter /> render 结果 -- {row[propKey]}
+                render 结果 -- {row[propKey]}
               </div>
             );
           },
