@@ -4,9 +4,9 @@
 
 ## Props
 
-| Prop name  | Description                           | Type   | Values | Default      |
-| ---------- | ------------------------------------- | ------ | ------ | ------------ |
-| alignItems | 中心 main 区域的 align-items 属性配置 | string | -      | "self-start" |
+| Prop name   | Description                           | Type   | Values | Default      |
+| ----------- | ------------------------------------- | ------ | ------ | ------------ |
+| align-items | 中心 main 区域的 align-items 属性配置 | string | -      | "self-start" |
 
 ## Slots
 
@@ -20,7 +20,7 @@
 
 ## 示例
 
-### 基本使用
+### 基础用法
 
 ::: demo 外盒子 360px, 中心 main 区域撑起剩余高度
 
@@ -79,8 +79,6 @@
 <script>
   export default {};
 </script>
-
-<style lang="scss" scoped></style>
 ```
 
 :::

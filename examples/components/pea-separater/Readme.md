@@ -1,6 +1,6 @@
 ## 示例
 
-### 基本使用
+### 基础用法
 
 ::: demo
 
@@ -8,11 +8,9 @@
 <template>
   <div>
     <p>垂直分隔线 |</p>
-    <ClientOnly>
       <pea-separater width="2" ></pea-separater>
       <br>
       <pea-separater width="2" color="green" ></pea-separater>
-    </ClientOnly>
   </div>
 </template>
 

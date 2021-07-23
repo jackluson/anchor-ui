@@ -1,6 +1,6 @@
 ## 示例
 
-### 基本使用
+### 基础用法
 
 ::: demo 外盒子360px, 中心main区域撑起剩余高度
 
@@ -64,7 +64,6 @@
   export default {};
 </script>
 
-<style lang="scss" scoped></style>
 ```
 
 :::
