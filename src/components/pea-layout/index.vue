@@ -35,7 +35,7 @@ export default {
     /**
      * 中心main 区域的align-items属性配置
      */
-    alignItems: {
+    'align-items': {
       type: String,
       default: "self-start",
     },

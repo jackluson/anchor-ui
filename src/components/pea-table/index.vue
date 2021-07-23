@@ -311,6 +311,14 @@ export default {
 
     ::v-deep table {
       margin: 0;
+      
+      .cell {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .el-table__expand-column .cell{
+        display: block;
+      }
     }
   }
 }

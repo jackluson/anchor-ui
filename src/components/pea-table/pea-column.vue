@@ -1,5 +1,6 @@
 <template>
   <el-table-column
+    v-if="isTypeColumn"
     v-bind="{
       ...$attrs,
       ...column,
@@ -8,7 +9,18 @@
     :align="column.align || align || 'left'"
     :header-align="headerAlign || column.align || align || 'left'"
   >
-    <template v-if="!isTypeColumn" v-slot="scope">
+  </el-table-column>
+  <el-table-column
+    v-else
+    v-bind="{
+      ...$attrs,
+      ...column,
+    }"
+    v-on="$listeners"
+    :align="column.align || align || 'left'"
+    :header-align="headerAlign || column.align || align || 'left'"
+  >
+    <template v-slot="scope">
       <div v-if="column.slot || column.slotName">
         <slot
           :row="scope.row"
@@ -33,7 +45,7 @@
 
     <!-- 绑定el-table的slot：header -->
     <template
-      v-if="!isTypeColumn && (column.slotHeaderName || column.renderHeader)"
+      v-if="(column.slotHeaderName || column.renderHeader)"
       v-slot:header="scope"
     >
       <span v-if="column.slotHeaderName">
@@ -63,6 +75,7 @@
       ></pea-column>
     </template>
   </el-table-column>
+
 </template>
 
 <script>
@@ -79,8 +92,9 @@ export default {
   },
 
   computed: {
+    // 判断type是否是selection, index类型
     isTypeColumn() {
-      return this.column.type && !this.column.label;
+      return ['selection', 'index'].includes(this.column.type);
     },
   },
 };
