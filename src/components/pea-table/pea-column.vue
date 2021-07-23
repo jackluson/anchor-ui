@@ -83,9 +83,5 @@ export default {
       return this.column.type && !this.column.label;
     },
   },
-
-  created() {
-    console.log("column", this.column);
-  },
 };
 </script>
