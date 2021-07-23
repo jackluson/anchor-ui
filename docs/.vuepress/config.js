@@ -51,10 +51,10 @@ module.exports = async () => {
       },
     },
     themeConfig: {
-      displayAllHeaders: true,
+      // displayAllHeaders: true,
       nav: [
         { text: "首页", link: "/" },
-        { text: "基础公共组件", link: "/components/" },
+        { text: "组件", link: "/components/" },
       ],
       sidebarDepth: 2,
       sidebar: {

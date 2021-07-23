@@ -1,9 +1,15 @@
 <template>
   <el-table-column
-    v-if="isTypeColumn"
+    v-if="isTypeColumn || column.openDefaultFormatter"
     v-bind="{
+      formatter: column.openDefaultFormatter
+      ? (...args) => {
+          return formatter(...args, column.splitSymbol);
+        }
+      : undefined,
       ...$attrs,
       ...column,
+      
     }"
     v-on="$listeners"
     :align="column.align || align || 'left'"
@@ -86,6 +92,15 @@ export default {
     column: Object,
     headerAlign: String,
     align: String,
+    formatter: {
+      type: Function,
+      default: (row, column, val, index, splitSymbol) => {
+        if (val === null || val === undefined || val === "") {
+          return splitSymbol;
+        }
+        return val;
+      }
+    }
   },
   components: {
     PeaRender,

@@ -4,20 +4,22 @@
 
 ## Props
 
-| Prop name       | Description                                                         | Type           | Values                    | Default |
-| --------------- | ------------------------------------------------------------------- | -------------- | ------------------------- | ------- |
-| column          | 列配置, 每个数组元素参照 element-ui Table-column Attributes         | array          | -                         |         |
-| data            | 数据源                                                              | array          | -                         | []      |
-| spanMethod      |                                                                     | func           | -                         |         |
-| maxHeight       | Table 的最大高度。合法的值为数字或者单位为 px 的高度, 参照 el-table | string\|number | -                         |         |
-| pagination      | 是否显示分页                                                        | boolean        | -                         | false   |
-| border          | 是否带有纵向边框                                                    | boolean        | -                         | true    |
-| stripe          | 是否为斑马纹 table                                                  | boolean        | -                         | true    |
-| paginationTop   | 距离列表底部的 margin-top 距离                                      | string         | -                         | "15px"  |
-| paginationAlign | 分页对齐方式                                                        | string         | `right`, `left`, `center` | "right" |
-| pageSize        | 分页大小                                                            | number         | -                         | 10      |
-| currentPage     | 当前页                                                              | number         | -                         | 1       |
-| merge           | 合并数组                                                            | array          | -                         |         |
+| Prop name            | Description                                                         | Type           | Values                    | Default |
+| -------------------- | ------------------------------------------------------------------- | -------------- | ------------------------- | ------- |
+| column               | 列配置, 每个数组元素参照 element-ui Table-column Attributes         | array          | -                         |         |
+| data                 | 数据源                                                              | array          | -                         | []      |
+| openDefaultFormatter | 是否开始空值是否默认值，空值包括`null`, 空字符串, `undefined`,      | boolean        | -                         | false   |
+| splitSymbol          | 默认格式化字符                                                      | string         | -                         | "-"     |
+| maxHeight            | Table 的最大高度。合法的值为数字或者单位为 px 的高度, 参照 el-table | string\|number | -                         |         |
+| pagination           | 是否显示分页                                                        | boolean        | -                         | false   |
+| border               | 是否带有纵向边框                                                    | boolean        | -                         | true    |
+| stripe               | 是否为斑马纹 table                                                  | boolean        | -                         | true    |
+| paginationTop        | 距离列表底部的 margin-top 距离                                      | string         | -                         | "15px"  |
+| paginationAlign      | 分页对齐方式                                                        | string         | `right`, `left`, `center` | "right" |
+| pageSize             | 分页大小                                                            | number         | -                         | 10      |
+| currentPage          | 当前页                                                              | number         | -                         | 1       |
+| spanMethod           | 合并行或列的计算方法， 同`el-table`                                 | func           | -                         |         |
+| merge                | 需要合并 prop 数组,如果配置了此值，默认计算`spanMethod`方法         | array          | -                         |         |
 
 ## Events
 
@@ -62,9 +64,17 @@
 
 ### 集成分页
 
-::: demo
+::: demo 用`el-pagination`集成了分页功能，设置`pagination` 开始分页功能, `el-pagination`的`current-change`事件名与 table 的事件名冲突，重新命名为`p-current-change`, 其他属性与事件同`el-pagination` 一样
 
 <<< @/examples/components/pea-table/example/pagination-integrated-table.vue
+
+:::
+
+### 格式化默认值
+
+::: demo 利用`formatter`功能，实现空值时候显示默认值, `openDefaultFormatter` 开始该功能， 使用`splitSymbol` 修改默认值， 也可以 column 的 openDefaultFormatter 关闭该功能, 或者使用 column 的 formatter 属性覆盖默认 formatter 函数
+
+<<< @/examples/components/pea-table/example/formatter-table.vue
 
 :::
 
@@ -276,7 +286,7 @@
 
 支持表格动态合并
 
-::: demo `lb-table`上配置`merge`,`merge`为一个包含需要合并的`column`中`prop`的数组，配置后会自动将值相同的项自动合并。
+::: demo `pea-table`上配置`merge`,`merge`为一个包含需要合并的`column`中`prop`的数组，配置后会自动将值相同的项自动合并。
 
 <<< @/examples/components/pea-table/example/merge-table.vue
 
