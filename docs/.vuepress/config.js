@@ -15,10 +15,12 @@ const genComponentSidebar = (dir) => {
   }))
 };
 
+const basePath = '/aurora-ui/'
+
 module.exports = async () => {
   // const sidebar = glob.sync('shared/**/index.md', { cwd }).map(f => f.replace(/^shared\/(\S+\/)
   return {
-    base: "/",
+    base: basePath,
     head: [
       ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 
@@ -29,8 +31,8 @@ module.exports = async () => {
       [
         "script",
         {
-          //src: "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/index.js",
-          src: "/lib/element-ui/2.15.3.min.js",
+          src: "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/index.js",
+          // src: "/lib/element-ui/2.15.3.min.js",
         },
       ],
       [
@@ -41,7 +43,7 @@ module.exports = async () => {
             "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/theme-chalk/index.css",
         },
       ],
-      ["script", { src: "/lib/pea-ui/pea-ui.umd.min.js" }],
+      ["script", { src: `/lib/pea-ui/pea-ui.umd.min.js` }],
     ],
     dest: path.join(__dirname, "../../dist"),
     title: "Pea UI Toolkit",
