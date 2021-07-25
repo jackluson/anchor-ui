@@ -113,7 +113,7 @@ module.exports = async () => {
       //config.resolve.alias.set("core-js/library/fn", "core-js/features");
       // config 是 ChainableConfig 的一个实例
       config.externals({
-        vue: "Vue",
+        // vue: "Vue",
         "element-ui": "ELEMENT",
         "pea-ui": "PeaUI",
       });
