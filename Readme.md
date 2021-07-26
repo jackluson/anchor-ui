@@ -2,14 +2,22 @@
 
 > 基于 Element-UI 二次封装组件库
 
+## 关于组件库文档
+
+组件库文档先利用 `vue-docgen`从源码注释中提取组件文档，然后结合组件示例文档，最终生成最终文档。利用`vuepress`结合自定义插件（文档示例代码不用写两次）渲染出来
+
 ## Component Kanban
 
-| Components |  快捷入口 |
-| --- | --- |
-| pea-table | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-table/) |
-| pea-dialog | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-dialog/) |
-| pea-layout | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-layout/) |
+> 目前提供如下组件
+
+| Components    | 快捷入口                                                                    |
+| ------------- | --------------------------------------------------------------------------- |
+| pea-table     | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-table/)     |
+| pea-dialog    | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-dialog/)    |
+| pea-layout    | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-layout/)    |
 | pea-separater | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-separater/) |
+
+## 使用
 
 ## 遗留问题
 
