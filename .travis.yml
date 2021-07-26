@@ -1,0 +1,32 @@
+language: node_js
+
+node_js:
+  - 12.13.1
+
+cache:
+  directories:
+    - node_modules #缓存依赖
+
+
+# S: Build Lifecycle
+install:
+  - yarn install
+
+script:
+  - yarn docs:build
+#after_script前5句是把部署分支的.git文件夹保护起来，用于保留历史部署的commit日志，否则部署分支永远只有一条commit记录。
+#命令里面的变量都是在Travis CI里配置过的。
+after_script:
+  - cd dist
+  - git init
+  - git config user.name "${U_NAME}"
+  - git config At-Cost Domain Pricing - Domain Cost Club "${U_EMAIL}"
+  - git add .
+  - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
+  - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:${D_BRANCH}
+# E: Build LifeCycle
+
+# 只有指定的分支提交时才会运行脚本
+branches:
+  only:
+    - main
