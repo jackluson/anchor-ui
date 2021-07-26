@@ -23,17 +23,16 @@ module.exports = async () => {
     base: basePath,
     head: [
       ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-
-      [
-        "script",
-        { src: "https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" },
-      ],
       [
         "script",
         {
-          src: "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/index.js",
-          // src: "/lib/element-ui/2.15.3.min.js",
+          src: "/lib/vue/2.6.14-vue.min.js",
+
         },
+      ],
+      [
+        "script",
+        { src: "/lib/element-ui/2-15-3/index.min.js", },
       ],
       [
         "link",
