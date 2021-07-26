@@ -1,4 +1,4 @@
-name: aurora-ui
+name: anchor-ui
 on:
   push:
     branches:

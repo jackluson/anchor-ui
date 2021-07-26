@@ -15,7 +15,7 @@ const genComponentSidebar = (dir) => {
   }))
 };
 
-const basePath = '/aurora-ui/'
+const basePath = '/anchor-ui/'
 
 module.exports = async () => {
   // const sidebar = glob.sync('shared/**/index.md', { cwd }).map(f => f.replace(/^shared\/(\S+\/)
@@ -115,7 +115,7 @@ module.exports = async () => {
       //config.resolve.alias.set("core-js/library/fn", "core-js/features");
       // config 是 ChainableConfig 的一个实例
       config.externals({
-        // vue: "Vue",
+        vue: "Vue",
         "element-ui": "ELEMENT",
         "pea-ui": "PeaUI",
       });
