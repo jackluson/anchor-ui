@@ -4,9 +4,12 @@
 
 ## Component Kanban
 
-| Components | Downloads | Gzipped Size |
-| --- | --- |  --- |
-| pea-table | [![layout](https://img.shields.io/npm/dw/@ant-design/pro-layout.svg)](https://www.npmjs.com/package/@ant-design/pro-layout)  | [![](https://img.badgesize.io/https:/unpkg.com/@ant-design/pro-layout/dist/layout.min.js?label=Gzipped%20JS&compression=gzip&style=flat-square)](https://unpkg.com/browse/@ant-design/pro-layout/dist/layout.min.js) |
+| Components |  快捷入口 |
+| --- | --- |
+| pea-table | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-table/) |
+| pea-dialog | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-dialog/) |
+| pea-layout | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-layout/) |
+| pea-separater | [文档实例](https://jackluson.github.io/anchor-ui/components/pea-separater/) |
 
 ## 遗留问题
 
