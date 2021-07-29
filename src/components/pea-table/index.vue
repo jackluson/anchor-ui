@@ -91,7 +91,7 @@ import PeaColumn from "./pea-column";
  * @displayName pea-table
  */
 export default {
-  name: "PeaTable",
+  name: "pea-table",
   props: {
     /**
      * 列配置, 每个数组元素参照element-ui Table-column Attributes

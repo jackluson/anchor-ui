@@ -1,9 +1,11 @@
 /*
  * Desc: 全局注册组件
  * File: \docs\.vuepress\addons\register.js
- * Project: pea-ui
+ * Project: anchor-ui
  * File Created: Thursday, 26th November 2020 11:07:57 am
  */
+
+export * from 'element-ui'
 
 const components = [];
 const contexts = require.context(
@@ -27,14 +29,16 @@ contexts.keys().forEach((component) => {
   components.push(componentEntity);
 });
 
-const install = function(Vue, opts = {}) {
+const install = async function (Vue, opts = {}) {
+  const elementUI = await import("element-ui");
+  Vue.use(elementUI)
   components.forEach((component) => {
     component.name && Vue.component(component.name, component);
   });
 };
 
-const PeaUI = {
+const AnchorUI = {
   install,
 };
 
-export default PeaUI;
+export default AnchorUI;

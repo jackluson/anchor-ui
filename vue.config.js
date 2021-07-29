@@ -61,9 +61,9 @@ const bannerConfigFun = (compilation) => {
       console.info(
       '%c ${item.label}: %c ${item.value} %c',
       'background:${item.labelBgColor ||
-        "#35495e"} ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+      "#35495e"} ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
       'background:${item.valueBgColor ||
-        "#41b883"} ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+      "#41b883"} ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
       'background:transparent'
       );
     `;
@@ -92,7 +92,7 @@ module.exports = {
   },
   chainWebpack: (config) => {
     config.output
-      .library(isTargetLib ? "PeaUI" : name)
+      .library(isTargetLib ? "AnchorUI" : name)
       .libraryTarget("umd")
       .libraryExport("default");
     config.externals({

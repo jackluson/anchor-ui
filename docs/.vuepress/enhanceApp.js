@@ -8,14 +8,14 @@ if (isDev) {
 }
 export default async ({ isServer }) => {
   if (!isServer) {
-    const elementUI = await import("element-ui");
-    Vue.use(elementUI);
-    let peaUI;
+    // const elementUI = await import("element-ui");
+    // Vue.use(elementUI);
+    let anchorUI;
     if (isDev) {
-      peaUI = await import("./addons/register");
+      anchorUI = await import("./addons/register");
     } else {
-      peaUI = await import("pea-ui");
+      anchorUI = await import("anchor-ui");
     }
-    peaUI && Vue.use(peaUI.default);
+    anchorUI && Vue.use(anchorUI.default);
   }
 };

@@ -1,7 +1,5 @@
 <!--
  * Desc: 基于el-dialog 封装弹窗组件, 自带取消, 确认
- * File: \src\shared\pea-dialog\index.vue
- * Project: personnel
  * File Created: Wednesday, 11th November 2020 2:27:41 pm
 -->
 

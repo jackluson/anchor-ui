@@ -1,18 +1,18 @@
 ---
-home: false
-heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
+home: true
+# heroImage: /hero.png
+heroText: Anchor UI 组件库展示平台
+tagline: 基于element-ui二次封装的组件库平台
 actionText: 快速上手 →
-actionLink: /zh/guide/
+actionLink: /components/
 features:
   - title: 简洁至上
-    details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-  - title: Vue驱动
-    details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-  - title: 高性能
-    details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+    details: 以 element-ui为基础进行二次封装，减少代码量
+  - title: 灵活变动
+    details: 基于原有element的参数及事件，内置通用属性, 也可通过传递参数去覆盖它。
+  - title: 99%支持度
+    details: 支持几乎原有所有的事件及参数，还是原来的配方, 此外还拓展一些常用功能与组件。
+footer: MIT Licensed | Copyright © 2021-present Vuepree 驱动
 ---
 
-# Pea UI 组件库展示平台
+<!-- # -->

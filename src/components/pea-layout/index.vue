@@ -1,7 +1,5 @@
 <!--
  * Desc: main 自动撑起页面剩余高度
- * File: \src\shared\pea-layout\index.vue
- * Project: personnel
  * File Created: Thursday, 5th November 2020 8:57:20 pm
 -->
 
@@ -30,7 +28,7 @@
  * @displayName pea-layout
  */
 export default {
-  name: "PeaLayout",
+  name: "pea-layout",
   props: {
     /**
      * 中心main 区域的align-items属性配置
