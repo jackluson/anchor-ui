@@ -2,4 +2,4 @@ dist/
 build/
 node_modules/
 .npmrc
-docs/.vuepress/public/lib/pea-ui/demo.html
+docs/.vuepress/public/lib/anchor-ui/demo.html

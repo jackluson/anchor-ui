@@ -1,18 +1,19 @@
 {
   "name": "anchor-ui",
-  "version": "0.1.0",
-  "description": "pea ui toolkit",
+  "version": "1.0.0-beta",
+  "description": "anchor ui toolkit",
   "repository": "https://github.com/jackluson/anchor-ui.git",
   "author": "jackuson <18219112108@163.com>",
   "license": "MIT",
-  "main": "build/pea-ui.umd.min.js",
+  "main": "build/anchor-ui.umd.min.js",
   "scripts": {
     "dev:all": "concurrently \"yarn docs:dev\" \"yarn docgen\"",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "docs:deploy": "sh ./script/deploy.sh",
     "docgen": "vue-docgen -w -c docgen.config.js",
-    "build:pkg": "vue-cli-service build --target lib --dest build --name pea-ui ./docs/.vuepress/addons/register.js",
-    "build:watch": "vue-cli-service build --watch --target lib --dest docs/.vuepress/public/lib/pea-ui --name pea-ui ./docs/.vuepress/addons/register.js"
+    "build:pkg": "vue-cli-service build --target lib --dest build --name anchor-ui ./docs/.vuepress/addons/register.js",
+    "build:watch": "vue-cli-service build --watch --target lib --dest docs/.vuepress/public/lib/anchor-ui --name anchor-ui ./docs/.vuepress/addons/register.js"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

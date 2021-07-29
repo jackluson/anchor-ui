@@ -3,5 +3,8 @@ docs/
 config/templates
 @vuepress
 docgen.config.js
+.travis.yml
 dist/
-build/demo.html 
+script/
+.github/
+build/demo.html

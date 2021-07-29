@@ -42,10 +42,10 @@ module.exports = async () => {
             "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/theme-chalk/index.css",
         },
       ],
-      ["script", { src: `/lib/pea-ui/pea-ui.umd.min.js` }],
+      ["script", { src: `/lib/anchor-ui/anchor-ui.umd.min.js` }],
     ],
     dest: path.join(__dirname, "../../dist"),
-    title: "Pea UI Toolkit",
+    title: "Anchor UI Toolkit",
     locales: {
       '/': {
         lang: 'zh-CN',
@@ -56,6 +56,7 @@ module.exports = async () => {
       nav: [
         { text: "首页", link: "/" },
         { text: "组件", link: "/components/" },
+        { text: "Github", link: "https://github.com/jackluson/anchor-ui" },
       ],
       sidebarDepth: 2,
       sidebar: {
@@ -116,7 +117,7 @@ module.exports = async () => {
       config.externals({
         vue: "Vue",
         "element-ui": "ELEMENT",
-        "pea-ui": "PeaUI",
+        "anchor-ui": "AnchorUI",
       });
     },
   };
