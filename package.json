@@ -1,6 +1,6 @@
 {
-  "name": "anchor-ui",
-  "version": "1.0.0-beta",
+  "name": "anchor-ui-vue",
+  "version": "0.9.0",
   "description": "anchor ui toolkit",
   "repository": "https://github.com/jackluson/anchor-ui.git",
   "author": "jackuson <18219112108@163.com>",
@@ -56,6 +56,9 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "browserslist": [
     "> 1%",

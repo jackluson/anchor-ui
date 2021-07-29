@@ -4,6 +4,7 @@ config/templates
 @vuepress
 docgen.config.js
 .travis.yml
+.npmrc
 dist/
 script/
 .github/
