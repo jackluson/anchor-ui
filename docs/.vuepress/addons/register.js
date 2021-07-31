@@ -5,8 +5,6 @@
  * File Created: Thursday, 26th November 2020 11:07:57 am
  */
 
-export * from 'element-ui'
-
 const components = [];
 const contexts = require.context(
   "../../../src/",
@@ -29,9 +27,12 @@ contexts.keys().forEach((component) => {
   components.push(componentEntity);
 });
 
-const install = async function (Vue, opts = {}) {
-  const elementUI = await import("element-ui");
-  Vue.use(elementUI)
+const install = async function(Vue, opts = {}) {
+  const { isUseElement } = opts;
+  if (isUseElement) {
+    const elementUI = await import("element-ui");
+    Vue.use(elementUI);
+  }
   components.forEach((component) => {
     component.name && Vue.component(component.name, component);
   });

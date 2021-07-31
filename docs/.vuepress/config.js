@@ -5,17 +5,18 @@ const cwd = path.join(__dirname, "..");
 const genComponentSidebar = (dir) => {
   const reg = new RegExp(`^${dir}\\/(\\S+)\\/index.md$`, "g");
 
-  const componentList = glob.sync(`${dir}/**/index.md`, { cwd }).map((f) => f.replace(reg, (ms, $1) => {
-    return $1;
-  })
+  const componentList = glob.sync(`${dir}/**/index.md`, { cwd }).map((f) =>
+    f.replace(reg, (ms, $1) => {
+      return $1;
+    })
   );
   return componentList.map((componentName) => ({
     title: componentName,
-    path: `${componentName}/`
-  }))
+    path: `${componentName}/`,
+  }));
 };
 
-const basePath = '/anchor-ui/'
+const basePath = "/anchor-ui/";
 
 module.exports = async () => {
   // const sidebar = glob.sync('shared/**/index.md', { cwd }).map(f => f.replace(/^shared\/(\S+\/)
@@ -27,13 +28,9 @@ module.exports = async () => {
         "script",
         {
           src: "/lib/vue/2.6.14-vue.min.js",
-
         },
       ],
-      [
-        "script",
-        { src: "/lib/element-ui/2-15-3/index.min.js", },
-      ],
+      ["script", { src: "/lib/element-ui/2-15-3/index.min.js" }],
       [
         "link",
         {
@@ -42,13 +39,13 @@ module.exports = async () => {
             "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/theme-chalk/index.css",
         },
       ],
-      ["script", { src: `/lib/anchor-ui/anchor-ui.umd.min.js` }],
+      // ["script", { src: `/lib/anchor-ui/anchor-ui.umd.min.js` }],
     ],
     dest: path.join(__dirname, "../../dist"),
     title: "Anchor UI Toolkit",
     locales: {
-      '/': {
-        lang: 'zh-CN',
+      "/": {
+        lang: "zh-CN",
       },
     },
     themeConfig: {
@@ -72,8 +69,8 @@ module.exports = async () => {
       // sidebar
     },
     plugins: [
-      '@vuepress/back-to-top',
-      '@vuepress/nprogress',
+      "@vuepress/back-to-top",
+      "@vuepress/nprogress",
       //[
       //  "typescript",
       //  {
@@ -107,11 +104,14 @@ module.exports = async () => {
             },
           ],
         },
-      ]
+      ],
     ],
 
     chainWebpack: (config, isServer) => {
-      console.log(`🚀 ~ file: config.js ~ line 109 ~ module.exports= ~ isServer`, isServer);
+      console.log(
+        `🚀 ~ file: config.js ~ line 109 ~ module.exports= ~ isServer`,
+        isServer
+      );
       //config.resolve.alias.set("core-js/library/fn", "core-js/features");
       // config 是 ChainableConfig 的一个实例
       config.externals({

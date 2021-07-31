@@ -68,6 +68,7 @@
       ></anchor-render>
       <span v-else>{{ column.label }}</span>
     </template>
+    <!-- 嵌套 el-table-column，就可以实现多级表头。 -->
     <template v-if="column.children">
       <anchor-column
         v-for="(col, index) in column.children"
@@ -85,7 +86,7 @@
 <script>
 import AnchorRender from "./anchor-render";
 export default {
-  name: "PeaColumn",
+  name: "AnchorColumn",
   props: {
     column: Object,
     headerAlign: String,
@@ -103,7 +104,6 @@ export default {
   components: {
     AnchorRender,
   },
-
   computed: {
     // 判断type是否是selection, index类型
     isTypeColumn() {
