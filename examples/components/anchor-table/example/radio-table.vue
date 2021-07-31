@@ -1,7 +1,7 @@
 <template>
   <div>
     <anchor-table
-      ref="lbTable"
+      ref="an"
       highlight-current-row
       :column="tableData.column"
       :data="tableData.data"
@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     setCurrent(row) {
-      this.$refs.lbTable.setCurrentRow(row);
+      this.$refs.anTable.setCurrentRow(row);
     },
     handleCurrentChange(val) {
       this.currentRow = val;

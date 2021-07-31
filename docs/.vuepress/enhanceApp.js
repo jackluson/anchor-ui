@@ -12,7 +12,7 @@ export default async ({ isServer }) => {
     // Vue.use(elementUI);
     let anchorUI;
     if (isDev) {
-      anchorUI = await import("./addons/register");
+      anchorUI = await import("../../src/main.js");
     } else {
       anchorUI = await import("anchor-ui");
     }

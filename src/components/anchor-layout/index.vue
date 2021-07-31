@@ -5,17 +5,17 @@
 
 <template>
   <div class="anchor-layout">
-    <header v-if="this.$scopedSlots.header">
+    <header v-if="$scopedSlots.header">
       <!--
         @slot header 头部插槽内容
        -->
       <slot name="header"></slot>
     </header>
-    <main class="anchor-layout-main" :style="`align-items: ${this.alignItems}`">
+    <main class="anchor-layout-main" :style="`align-items: ${alignItems}`">
       <!-- @slot 默认插槽内容，中心main区域 -->
       <slot></slot>
     </main>
-    <footer v-if="this.$scopedSlots.footer">
+    <footer v-if="$scopedSlots.footer">
       <!-- @slot footer 脚部插槽内容 -->
       <slot name="footer"></slot>
     </footer>

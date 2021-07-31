@@ -1,4 +1,3 @@
-<script>
 export default {
   name: "AnchorRender",
   functional: true,
@@ -9,11 +8,8 @@ export default {
   render: (h, ctx) => {
     const renderResult = ctx.props.render(h, ctx.props.scope);
     const VNode = h("span", "").constructor; // get VNode constructor
-    return renderResult instanceof VNode ? (
-      renderResult
-    ) : (
-      <span>{renderResult}</span>
-    );
+    return renderResult instanceof VNode
+      ? renderResult
+      : h("span", [renderResult]);
   },
 };
-</script>

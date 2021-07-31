@@ -9,7 +9,7 @@
       :stripe="stripe"
       :border="border"
       :data="pagination && data.length > pageSize ? tableData : data"
-      :span-method="this.merge ? this.mergeMethod : this.spanMethod"
+      :span-method="merge ? mergeMethod : spanMethod"
       :max-height="maxHeight"
     >
       <anchor-column
