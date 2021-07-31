@@ -38,8 +38,11 @@ const components = [anchorDialog, anchorSeparater, anchorLayout, anchorTable];
 // });
 
 const install = async function(Vue, opts = {}) {
-  // const elementUI = await import("element-ui");
-  // Vue.use(elementUI);
+  const { isUseElement } = opts;
+  if (isUseElement) {
+    const elementUI = await import("element-ui");
+    Vue.use(elementUI);
+  }
   components.forEach((component) => {
     component.name && Vue.component(component.name, component);
   });

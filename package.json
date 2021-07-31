@@ -14,17 +14,12 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "sh ./script/deploy.sh",
     "docgen": "vue-docgen -w -c docgen.config.js",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "build:pkg": "vue-cli-service build --target lib --dest build --name anchor-ui ./docs/.vuepress/addons/register.js",
-    "build:watch": "vue-cli-service build --watch --target lib --dest docs/.vuepress/public/lib/anchor-ui --name anchor-ui ./docs/.vuepress/addons/register.js"
+    "build:pkg": "rollup -c",
+    "build:watch": "rollup -c -w"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@rollup/plugin-commonjs": "^20.0.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-nprogress": "^1.8.2",
     "async-validator": "1.11.5",
