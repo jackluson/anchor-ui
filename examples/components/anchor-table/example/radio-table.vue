@@ -1,7 +1,7 @@
 <template>
   <div>
     <anchor-table
-      ref="an"
+      ref="anTable"
       highlight-current-row
       :column="tableData.column"
       :data="tableData.data"

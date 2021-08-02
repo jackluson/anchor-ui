@@ -18,6 +18,8 @@ const genComponentSidebar = (dir) => {
 
 const basePath = "/anchor-ui/";
 
+const isDev = process.env.NODE_ENV === "development";
+
 module.exports = async () => {
   // const sidebar = glob.sync('shared/**/index.md', { cwd }).map(f => f.replace(/^shared\/(\S+\/)
   return {
@@ -39,8 +41,9 @@ module.exports = async () => {
             "https://cdn.jsdelivr.net/npm/element-ui@2.15.3/lib/theme-chalk/index.css",
         },
       ],
-      // ["script", { src: `/lib/anchor-ui/anchor-ui.umd.min.js` }],
-    ],
+    ].concat(
+      isDev ? [] : [["script", { src: `/lib/anchor-ui/anchor-ui.umd.min.js` }]]
+    ),
     dest: path.join(__dirname, "../../dist"),
     title: "Anchor UI Toolkit",
     locales: {
