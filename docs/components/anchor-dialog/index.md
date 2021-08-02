@@ -4,16 +4,16 @@
 
 ## Props
 
-| Prop name          | Description | Type    | Values | Default         |
-| ------------------ | ----------- | ------- | ------ | --------------- |
-| visible            |             | boolean | -      | false           |
-| title              |             | string  | -      | ""              |
-| width              |             | string  | -      | "500px"         |
-| appendToBody       |             | boolean | -      | true            |
-| beforeClose        |             | func    | -      |                 |
-| closeOnClickModal  |             | boolean | -      | false           |
-| cancelButtonText   |             | string  | -      | closeBtnText[0] |
-| confirmlButtonText |             | string  | -      | "确定"          |
+| Prop name          | Description                                                                                                                | Type    | Values | Default         |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | --------------- |
+| visible            | 是否显示 Dialog，支持 .sync 修饰符                                                                                         | boolean | -      | false           |
+| title              | Dialog 的标题                                                                                                              | string  | -      | ""              |
+| width              | Dialog 的宽度                                                                                                              | string  | -      | "500px"         |
+| appendToBody       | Dialog 自身是否插入至 body 元素上。嵌套的 Dialog 必须指定该属性并赋值为 true                                               | boolean | -      | true            |
+| beforeClose        | 关闭前的回调，会暂停 Dialog 的关闭                                                                                         | func    | -      |                 |
+| closeOnClickModal  | 是否可以通过点击 modal 关闭 Dialog                                                                                         | boolean | -      | false           |
+| cancelButtonText   | 取消按钮文本，默认为“取消”，如果是["取消", "关闭"]其中之一，自动触发 `this.$refs.anDialog.$emit("update:visible", false);` | string  | -      | closeBtnText[0] |
+| confirmlButtonText | 确认按钮文本                                                                                                               | string  | -      | "确定"          |
 
 ## Events
 

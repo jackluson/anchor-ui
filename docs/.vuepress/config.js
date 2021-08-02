@@ -57,12 +57,8 @@ module.exports = async () => {
       ],
       sidebarDepth: 2,
       sidebar: {
-        //"/shared/": [
-        //  { title: "介绍", path: "/shared/" },
-        //  ...genComponentSidebar("shared"),
-        //],
         "/components/": [
-          { title: "介绍", path: "/components/" },
+          { title: "快速入手", path: "/components/" },
           ...genComponentSidebar("components"),
         ],
       },

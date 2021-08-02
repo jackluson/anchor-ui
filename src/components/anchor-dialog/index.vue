@@ -11,7 +11,7 @@
     :append-to-body="appendToBody"
     :close-on-click-modal="closeOnClickModal"
     @close="handleClose"
-    ref="peaDialog"
+    ref="anDialog"
     v-bind="$attrs"
     v-on="$listeners"
   >
@@ -43,31 +43,55 @@ const closeBtnText = ["取消", "关闭"];
 export default {
   name: "anchor-dialog",
   props: {
+    /**
+     * 是否显示 Dialog，支持 .sync 修饰符
+     */
     visible: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Dialog 的标题
+     */
     title: {
       type: String,
       default: "",
     },
+    /**
+     * Dialog 的宽度
+     */
     width: {
       type: String,
       default: "500px",
     },
+    /**
+     * Dialog 自身是否插入至 body 元素上。嵌套的 Dialog 必须指定该属性并赋值为 true
+     */
     appendToBody: {
       type: Boolean,
       default: true,
     },
+    /**
+     * 关闭前的回调，会暂停 Dialog 的关闭
+     */
     beforeClose: Function,
+    /**
+     * 是否可以通过点击 modal 关闭 Dialog
+     */
     closeOnClickModal: {
       type: Boolean,
       default: false,
     },
+    /**
+     * 取消按钮文本，默认为“取消”，如果是["取消", "关闭"]其中之一，自动触发 `this.$refs.anDialog.$emit("update:visible", false);`
+     */
     cancelButtonText: {
       type: String,
       default: closeBtnText[0],
     },
+    /**
+     * 确认按钮文本
+     */
     confirmlButtonText: {
       type: String,
       default: "确定",
@@ -83,7 +107,7 @@ export default {
         closeBtnText.includes(this.cancelButtonText) &&
         !this.beforeClose
       ) {
-        this.$refs.peaDialog.$emit("update:visible", false);
+        this.$refs.anDialog.$emit("update:visible", false);
       }
     },
     handleConfirm(e) {
