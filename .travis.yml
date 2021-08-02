@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-- 12.13.1
+  - 12.13.1
 branches:
   only:
-  - main
-  - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
+    - main
+    - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
 cache:
   directories:
-  - node_modules
+    - node_modules
 install:
-- yarn install
+  - yarn install
 script:
-- echo "skipping tests"
+  - echo "skipping tests"
 before_deploy: npm run build:pkg
 deploy:
   provider: npm
@@ -20,12 +20,11 @@ deploy:
     secure: FkFqw3qRv9MO4izxRTmV8WwzxIVWFqB6R/WVCnekLs1EH/7F0gCRSpFsfSu5CPt2NZ5rmLBEYyr8OoMV1gWjtkXysJdUr2B3JyPmKWzopr7mzfBlGWsZmfvSJXt3jUhuzVpwUL40P+Rd6wyEZNgqZJcieRDoRiowk9u6EH/KPND1DMvp08vJgPlbW5yEdD9Wkrj9rYBplH+OZ71KVzRXyDy2ly1K8ZlXsm+GJzDtbFDlxb8YzlJQ1zN8o3y5qQ/k0IQn0Djo2M5alHoPlolS35uy4HLomfENqg8dJ/jlrQFgKg0w8Qa7h75aNHuI8Nxw+wus8m82UW8IUcfCa3VveM2SeMeG0BeQ8sxTpzbMwSOc3A2YCd6pKCuSB4Y6CzPxSj8mA0jIklvJQlrfYW5AhucroInXzTqfki3BLypXPLUfUwl+FYHvqGArBGDavbB0SnsxZQ8P4Ly+rS9DpTaKzDv52Z2w7vT4FL2Zq2PfbLpPkQSCWuEhhuvo8ZKsLiIpPlAxXb5oHqITOzcHDnUN/6YiISfDFEurgJByvRgukP74p/UoWIAYdCOKIBDthVbDgd74QWvSwrBnzMoa+GBLA18c/FmvEvbhWSrW/hCrdzY82Y2PdBOqe5gpgNGx7uNl5rBrPtSBBSd0OpWbo3Ieo4/QSUzU8gWE+N01gC9vSDo=
   on:
     tags: true
-    repo: jackluson/anchor-ui
-    branch: main
-  skip_cleanup: 'true'
+    all_branches: true
+  skip_cleanup: "true"
 notifications:
   email:
     recipients:
-    - luxuemin2108@gmail.com
+      - luxuemin2108@gmail.com
     on_success: never
     on_failure: always
