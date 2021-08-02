@@ -2,7 +2,19 @@
   "name": "anchor-ui-vue",
   "version": "0.10.8",
   "description": "anchor ui toolkit",
-  "repository": "https://github.com/jackluson/anchor-ui.git",
+  "keywords": [
+    "vue",
+    "element-ui",
+    "ui"
+  ],
+  "homepage": "https://github.com/jackluson/anchor-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackluson/anchor-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jackluson/anchor-ui/issues"
+  },
   "author": "jackuson <18219112108@163.com>",
   "license": "MIT",
   "main": "build/anchor-ui.common.js",

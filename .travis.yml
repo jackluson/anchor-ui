@@ -27,12 +27,16 @@ deploy:
   edge: true
   provider: npm
   email: luxuemin2108@gmail.com
-  # cleanup: true
-  api_key:
-    secure: v6sdx43zB6v2WsjGIhWVK6uAyAdnMP+qMq9576ZFKCpUzLKGG+FTnpYp+vDDjV5mz1j17MjfUe/yVfUijrQBtQyZ3j2+6QamVCAD9Nb4vvJ4ET39YqGiXsxMNixoVma2wHvShiVTG6YxM8vwuqmHCJWUMi2SinoEmvTBBlf6YLNT1yE9fPPgqxH0cxIbItOPYYDH3vHRXVRwCzmRYHG4Dc9XskUuyOn3W8Td2PmFosvUEmJLx+QjC2YAtUbZHXZ1BCbaHdda/er90eXZ/LSFTJsnG6yH6Ho4Ajs4DP/hzVeZI3hpLBcPDCvneYrbkKf3WCXlt3ZJ3ISR2rkvTZf6nw61wPSWQ98MD3Qj4rEcLm0DUWKBgU9eJw/RepZlp5Umq05FHcZVcq5/Q9pQjpyCFyigTMw9zBOpdIcQUd/ZcYhr8K97/yw7SxUUWn33WJe9nXktujM6tMDVCPP+kNOFhY4VDiPAqcNWtLi9GaZFFfv8ag7dwePNp45HbDltG1TJBVKU3E2NCDjAjoZMStj6HKiXCP4EQ23yjClNCBdhEnYqeEsIiw7QOSo5Dy8Zic7hTboEKqeCClnObPXHWz7Xq+3R1iMzQw4zgymaCoU3FTLc7ky67sowD79PCmYXfYa6c3ixmrcDI8kpLgATR44J1Mq5JeiaP9H+qOi5vvWuC4o=
+  api_key: $NPM_TOKEN
   on:
     tags: true
     all_branches: true
+  # cleanup: true
+  # api_key:
+  #   secure: v6sdx43zB6v2WsjGIhWVK6uAyAdnMP+qMq9576ZFKCpUzLKGG+FTnpYp+vDDjV5mz1j17MjfUe/yVfUijrQBtQyZ3j2+6QamVCAD9Nb4vvJ4ET39YqGiXsxMNixoVma2wHvShiVTG6YxM8vwuqmHCJWUMi2SinoEmvTBBlf6YLNT1yE9fPPgqxH0cxIbItOPYYDH3vHRXVRwCzmRYHG4Dc9XskUuyOn3W8Td2PmFosvUEmJLx+QjC2YAtUbZHXZ1BCbaHdda/er90eXZ/LSFTJsnG6yH6Ho4Ajs4DP/hzVeZI3hpLBcPDCvneYrbkKf3WCXlt3ZJ3ISR2rkvTZf6nw61wPSWQ98MD3Qj4rEcLm0DUWKBgU9eJw/RepZlp5Umq05FHcZVcq5/Q9pQjpyCFyigTMw9zBOpdIcQUd/ZcYhr8K97/yw7SxUUWn33WJe9nXktujM6tMDVCPP+kNOFhY4VDiPAqcNWtLi9GaZFFfv8ag7dwePNp45HbDltG1TJBVKU3E2NCDjAjoZMStj6HKiXCP4EQ23yjClNCBdhEnYqeEsIiw7QOSo5Dy8Zic7hTboEKqeCClnObPXHWz7Xq+3R1iMzQw4zgymaCoU3FTLc7ky67sowD79PCmYXfYa6c3ixmrcDI8kpLgATR44J1Mq5JeiaP9H+qOi5vvWuC4o=
+  # on:
+  #   tags: true
+  #   all_branches: true
 
 notifications:
   email:
