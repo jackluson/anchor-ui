@@ -16,6 +16,12 @@ cache:
 install:
   - yarn install
 
+# You can add a script with a echo to your .travis.yml file.
+# This will force Travis to run your script message instead of running tests automatically.
+
+script:
+  - echo "skipping tests"
+
 before_deploy: npm run build:pkg
 
 deploy:

@@ -15,7 +15,8 @@
     "docs:deploy": "sh ./script/deploy.sh",
     "docgen": "vue-docgen -w -c docgen.config.js",
     "build:pkg": "rollup -c",
-    "build:watch": "rollup -c -w"
+    "build:watch": "rollup -c -w",
+    "postversion": "git push --follow-tags"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.14.5",
