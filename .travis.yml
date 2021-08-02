@@ -5,7 +5,6 @@ node_js:
 
 branches:
   only:
-    - main
     - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
 
 cache:
