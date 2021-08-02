@@ -1,43 +1,31 @@
 language: node_js
-
 node_js:
-  - 12.13.1
-
+- 12.13.1
 branches:
   only:
-    - main
-    - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
-
+  - main
+  - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
 cache:
   directories:
-    - node_modules #缓存依赖
-
-# S: Build Lifecycle
+  - node_modules
 install:
-  - yarn install
-
-# You can add a script with a echo to your .travis.yml file.
-# This will force Travis to run your script message instead of running tests automatically.
-
+- yarn install
 script:
-  - echo "skipping tests"
-
+- echo "skipping tests"
 before_deploy: npm run build:pkg
-
 deploy:
-  edge: true
   provider: npm
   email: luxuemin2108@gmail.com
-  # cleanup: true
   api_key:
-    secure: WK1Ggb6NQfiXdgN4MCzbpx8JFyTUF8kS8Y0fSKl5OoHbvVFXeNlmsXAupVV7Lksl+Gnz3VrKZQHU3g7ldoR8O1emX3+Y5pvVtoSm0tp/75aNtCrLJSbzvFvOf/al3zPJoKOngVQeObDHlXh7K8nbwMsuirsSAmYtXuRseFEqZ9paz+AOXhTvlRGyz4ERthyecdoT04IVHDRtPqo5gcfdpYKPw8UAFWkVsVKFtqVS24XINa6ASilPsrOi8PVoEd9k7Fi2iEoawQmmVzPIZyOarNCEdq8TlF76JlIdwzRcI9h9hA04kcFJ9WemDBMR5cRywnUBDgfhUz9twAuYSUuHhmxgOYN+AY596B/RFH0b7INs/Nx9naAn+DRC2UY/flc4AhJiqJzYrywQcYb4bjpKCi7upKxDBA4k7U7m+pQyhIyGO2bLjYGkbldcb9TE6kguDnk7vYeE1+i5OySXxh8eKDzAfjO8CTPdfwF8jkqLNNgO1f0FLdYUkMH9CYwmcd2bFbqMSERhWeue+YJBeWXEsS8/dqyEmUDxnntfnM/CiPEdCi/p1CMLaCFepzWvyVBEpNnDeLCJi+8JtBq0uFuqr3kerEIzbynHNa4+UN7S5O3AypyO3QVDy4rpHHfQwwjxIIW2MWC7/IIo6pPdddRWzHCT/dUSmEd6HBTkeVmZp1Q=
+    secure: FkFqw3qRv9MO4izxRTmV8WwzxIVWFqB6R/WVCnekLs1EH/7F0gCRSpFsfSu5CPt2NZ5rmLBEYyr8OoMV1gWjtkXysJdUr2B3JyPmKWzopr7mzfBlGWsZmfvSJXt3jUhuzVpwUL40P+Rd6wyEZNgqZJcieRDoRiowk9u6EH/KPND1DMvp08vJgPlbW5yEdD9Wkrj9rYBplH+OZ71KVzRXyDy2ly1K8ZlXsm+GJzDtbFDlxb8YzlJQ1zN8o3y5qQ/k0IQn0Djo2M5alHoPlolS35uy4HLomfENqg8dJ/jlrQFgKg0w8Qa7h75aNHuI8Nxw+wus8m82UW8IUcfCa3VveM2SeMeG0BeQ8sxTpzbMwSOc3A2YCd6pKCuSB4Y6CzPxSj8mA0jIklvJQlrfYW5AhucroInXzTqfki3BLypXPLUfUwl+FYHvqGArBGDavbB0SnsxZQ8P4Ly+rS9DpTaKzDv52Z2w7vT4FL2Zq2PfbLpPkQSCWuEhhuvo8ZKsLiIpPlAxXb5oHqITOzcHDnUN/6YiISfDFEurgJByvRgukP74p/UoWIAYdCOKIBDthVbDgd74QWvSwrBnzMoa+GBLA18c/FmvEvbhWSrW/hCrdzY82Y2PdBOqe5gpgNGx7uNl5rBrPtSBBSd0OpWbo3Ieo4/QSUzU8gWE+N01gC9vSDo=
   on:
     tags: true
-    all_branches: true
-
+    repo: jackluson/anchor-ui
+    branch: main
+  skip_cleanup: 'true'
 notifications:
   email:
     recipients:
-      - luxuemin2108@gmail.com
+    - luxuemin2108@gmail.com
     on_success: never
     on_failure: always
