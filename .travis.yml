@@ -3,30 +3,36 @@ language: node_js
 node_js:
   - 12.13.1
 
+branches:
+  only:
+    - main
+    - "/^v?\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
+
 cache:
   directories:
     - node_modules #缓存依赖
-
 
 # S: Build Lifecycle
 install:
   - yarn install
 
-script:
-  - yarn docs:build
-#after_script前5句是把部署分支的.git文件夹保护起来，用于保留历史部署的commit日志，否则部署分支永远只有一条commit记录。
-#命令里面的变量都是在Travis CI里配置过的。
-after_script:
-  - cd dist
-  - git init
-  - git config user.name "${U_NAME}"
-  - git config At-Cost Domain Pricing - Domain Cost Club "${U_EMAIL}"
-  - git add .
-  - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
-  - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:${D_BRANCH}
-# E: Build LifeCycle
+before_deploy: npm run build:pkg
 
-# 只有指定的分支提交时才会运行脚本
-branches:
-  only:
-    - main
+deploy:
+  edge: true
+  provider: npm
+  email: luxuemin2108@gmail.com
+  # cleanup: true
+  api_key:
+    secure: WK1Ggb6NQfiXdgN4MCzbpx8JFyTUF8kS8Y0fSKl5OoHbvVFXeNlmsXAupVV7Lksl+Gnz3VrKZQHU3g7ldoR8O1emX3+Y5pvVtoSm0tp/75aNtCrLJSbzvFvOf/al3zPJoKOngVQeObDHlXh7K8nbwMsuirsSAmYtXuRseFEqZ9paz+AOXhTvlRGyz4ERthyecdoT04IVHDRtPqo5gcfdpYKPw8UAFWkVsVKFtqVS24XINa6ASilPsrOi8PVoEd9k7Fi2iEoawQmmVzPIZyOarNCEdq8TlF76JlIdwzRcI9h9hA04kcFJ9WemDBMR5cRywnUBDgfhUz9twAuYSUuHhmxgOYN+AY596B/RFH0b7INs/Nx9naAn+DRC2UY/flc4AhJiqJzYrywQcYb4bjpKCi7upKxDBA4k7U7m+pQyhIyGO2bLjYGkbldcb9TE6kguDnk7vYeE1+i5OySXxh8eKDzAfjO8CTPdfwF8jkqLNNgO1f0FLdYUkMH9CYwmcd2bFbqMSERhWeue+YJBeWXEsS8/dqyEmUDxnntfnM/CiPEdCi/p1CMLaCFepzWvyVBEpNnDeLCJi+8JtBq0uFuqr3kerEIzbynHNa4+UN7S5O3AypyO3QVDy4rpHHfQwwjxIIW2MWC7/IIo6pPdddRWzHCT/dUSmEd6HBTkeVmZp1Q=
+  on:
+    tags: true
+    repo: jackluson/babel-plugin-styled-components-px2vw
+    branch: main
+
+notifications:
+  email:
+    recipients:
+      - luxuemin2108@gmail.com
+    on_success: never
+    on_failure: always
