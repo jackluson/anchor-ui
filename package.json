@@ -17,9 +17,9 @@
   },
   "author": "jackuson <18219112108@163.com>",
   "license": "MIT",
-  "main": "build/anchor-ui.common.js",
+  "main": "build/anchor-ui.common.min.js",
   "browser": "build/anchor-ui.umd.min.js",
-  "module": "build/anchor-ui.esm.js",
+  "module": "build/anchor-ui.esm.min.js",
   "scripts": {
     "dev:all": "concurrently \"yarn docs:dev\" \"yarn docgen\"",
     "docs:dev": "vuepress dev docs",

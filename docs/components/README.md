@@ -20,7 +20,7 @@ $ yarn add anchor-ui-vue
 
 ## 示例
 
-### 1. vue-cli 脚手架搭建项目
+### 1. vue-cli 脚手架搭建项目 -- [github 地址](https://github.com/jackluson/anchor-ui-vue-demo)
 
 ```javascript
 import Vue from "vue";
