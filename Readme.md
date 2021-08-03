@@ -19,12 +19,12 @@
 
 > 目前提供如下组件
 
-| Components       | 快捷入口                                                                       |
-| ---------------- | ------------------------------------------------------------------------------ |
-| anchor-table     | [文档实例](https://jackluson.github.io/anchor-ui/components/anchor-table/)     |
-| anchor-dialog    | [文档实例](https://jackluson.github.io/anchor-ui/components/anchor-dialog/)    |
-| anchor-layout    | [文档实例](https://jackluson.github.io/anchor-ui/components/anchor-layout/)    |
-| anchor-separater | [文档实例](https://jackluson.github.io/anchor-ui/components/anchor-separater/) |
+| Components   | 快捷入口                                                               |
+| ------------ | ---------------------------------------------------------------------- |
+| an-table     | [文档实例](https://jackluson.github.io/an-ui/components/an-table/)     |
+| an-dialog    | [文档实例](https://jackluson.github.io/an-ui/components/an-dialog/)    |
+| an-layout    | [文档实例](https://jackluson.github.io/an-ui/components/an-layout/)    |
+| an-separater | [文档实例](https://jackluson.github.io/an-ui/components/an-separater/) |
 
 ## 安装
 

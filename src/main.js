@@ -8,10 +8,10 @@
  * Copyright (c) 2020 Camel Lu
  */
 
-import anchorDialog from "./components/anchor-dialog/index.vue";
-import anchorLayout from "./components/anchor-layout/index.vue";
-import anchorSeparater from "./components/anchor-separater/index.vue";
-import anchorTable from "./components/anchor-table/index.vue";
+import anchorDialog from "./components/an-dialog/index.vue";
+import anchorLayout from "./components/an-layout/index.vue";
+import anchorSeparater from "./components/an-separater/index.vue";
+import anchorTable from "./components/an-table/index.vue";
 
 const components = [anchorDialog, anchorSeparater, anchorLayout, anchorTable];
 
