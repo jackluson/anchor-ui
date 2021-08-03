@@ -62,14 +62,7 @@ Vue.use(ElementUI);
 Vue.use(AnchorUI);
 ```
 
-这是一个使用 vue-cli 搭建的 Anchor UI 组件的在线 codesandbox 演示项目。
-
-<iframe src="https://codesandbox.io/embed/awesome-leaf-3vfbx?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="awesome-leaf-3vfbx"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+[这是一个使用 vue-cli 搭建的 Anchor UI 在线 codesandbox 演示项目](https://codesandbox.io/embed/awesome-leaf-3vfbx?fontsize=14&hidenavigation=1&theme=dark)
 
 ### 2. 使用 CDN 静态页面
 
@@ -87,14 +80,7 @@ Vue.use(AnchorUI);
 <script src="https://cdn.jsdelivr.net/gh/jackluson/anchor-ui@main/build/anchor-ui.umd.min.js"></script>
 ```
 
-这是一个使用 CDN 引入的 Anchor UI 组件的在线 codesandbox 演示项目。
-
-<iframe src="https://codesandbox.io/embed/nervous-taussig-u09hq?fontsize=14&hidenavigation=1&moduleview=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="nervous-taussig-u09hq"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+[这是一个使用 CDN 引入的 Anchor UI 在线 codesandbox 演示项目](https://codesandbox.io/embed/nervous-taussig-u09hq?fontsize=14&hidenavigation=1&moduleview=1&theme=dark)。
 
 ## 遗留问题
 
