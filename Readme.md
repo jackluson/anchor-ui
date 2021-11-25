@@ -13,10 +13,10 @@
 
 | Components   | 快捷入口                                                               |
 | ------------ | ---------------------------------------------------------------------- |
-| an-table     | [文档实例](https://jackluson.github.io/an-ui/components/an-table/)     |
-| an-dialog    | [文档实例](https://jackluson.github.io/an-ui/components/an-dialog/)    |
-| an-layout    | [文档实例](https://jackluson.github.io/an-ui/components/an-layout/)    |
-| an-separater | [文档实例](https://jackluson.github.io/an-ui/components/an-separater/) |
+| an-table     | [文档实例](https://jackluson.github.io/anchor-ui/components/an-table/)     |
+| an-dialog    | [文档实例](https://jackluson.github.io/anchor-ui/components/an-dialog/)    |
+| an-layout    | [文档实例](https://jackluson.github.io/anchor-ui/components/an-layout/)    |
+| an-separater | [文档实例](https://jackluson.github.io/anchor-ui/components/an-separater/) |
 
 ## 安装
 
