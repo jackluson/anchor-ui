@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/jackluson/anchor-ui/issues"
   },
-  "author": "jackuson <18219112108@163.com>",
+  "author": "jackuson",
   "license": "MIT",
   "main": "build/anchor-ui.common.min.js",
   "browser": "build/anchor-ui.umd.min.js",
@@ -95,3 +95,4 @@
     "not dead"
   ]
 }
+
